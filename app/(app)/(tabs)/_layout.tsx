@@ -18,6 +18,15 @@ export default function TabBar() {
         }}
       />
       <Tabs.Screen
+        name="postMap"
+        options={{
+          title: "Post map",
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="environment" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: "Profil",

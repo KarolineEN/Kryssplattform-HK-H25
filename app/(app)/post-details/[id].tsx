@@ -13,6 +13,7 @@ import {
   View,
 } from "react-native";
 import MapView, { Callout, Marker } from "react-native-maps";
+import * as postApi from "@/api/postApi";
 
 export default function PostDetailsPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -29,8 +30,14 @@ export default function PostDetailsPage() {
     }
   }
 
+  async function fetchPostsFromApi(inputId: string) {
+    const post = await postApi.getPostsById(inputId)
+    setPost(post);
+  }
+
   useEffect(() => {
-    fetchPostFromLocal(id);
+    // fetchPostFromLocal(id);
+    fetchPostsFromApi(id);
   }, [id]);
 
   if (post === null) {

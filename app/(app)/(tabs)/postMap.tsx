@@ -21,15 +21,16 @@ export default function PostMap() {
 
     return (
         <View style={styles.mainContainer}>
-            {posts.map((post) => (
+            
                 <MapView 
                     initialRegion={{
-                    latitude: post.postCoordinates?.latitude ?? 0,
-                    longitude: post.postCoordinates?.longitude ?? 0,
+                    latitude: 59.91333,
+                    longitude: 10.73897,
                     latitudeDelta: 0.0082,
                     longitudeDelta: 0.0081,
                     }}
                     style={styles.map}>
+                    {posts.map((post) => (
                         <Marker
                             key={post.id}
                             coordinate={{
@@ -38,10 +39,12 @@ export default function PostMap() {
                             }}
                             title={post.title}
                         />
+                    ))}
                 </MapView>
-                ))}
             <Callout>
-              <Text>Hei jeg er en callout</Text>
+              <Text>
+                Tap on the markers to see post titles.
+              </Text>
             </Callout>
         </View>
     )

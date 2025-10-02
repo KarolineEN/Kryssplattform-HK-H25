@@ -24,8 +24,8 @@ export default function PostMap() {
             
                 <MapView 
                     initialRegion={{
-                    latitude: 59.91333,
-                    longitude: 10.73897,
+                    latitude: 59.906096,
+                    longitude: 10.73767,
                     latitudeDelta: 0.0082,
                     longitudeDelta: 0.0081,
                     }}
